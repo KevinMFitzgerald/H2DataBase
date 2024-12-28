@@ -13,8 +13,8 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Person temp1 = new Person( 1, "Kevin Mark Fitzgerald", 30, "KMF@gmail.com", "Engineer", "K123", "Software Engineer", "IT");
-        Person temp2 = new Person( 2,"Mark Kevin Fitzgerald", 28, "MKF@example.com", "Student", "M456", "Software Engineer", "IT");
+        Person temp1 = new Person(1L, "Kevin Mark Fitzgerald", 30, "KMF@gmail.com", "Engineer", "K123", "Software Engineer", "IT");
+        Person temp2 = new Person( 2L,"Mark Kevin Fitzgerald", 28, "MKF@example.com", "Student", "M456", "Software Engineer", "IT");
         personRepository.save(temp2);
         personRepository.save(temp1);
     }
