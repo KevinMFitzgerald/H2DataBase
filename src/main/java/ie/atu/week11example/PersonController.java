@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequestMapping("/person")
 @RestController
 public class PersonController {
@@ -27,6 +29,31 @@ public class PersonController {
         }
 
         return ResponseEntity.ok(person);
+    }
+    @PutMapping("/{employeeId}")
+    public ResponseEntity<String> updatePerson(@PathVariable String employeeId, @RequestBody Person updatedPerson) {
+        Person existingPerson = personService.getPersonByEmployeeId(employeeId);
+        if (existingPerson == null) {
+            return ResponseEntity.notFound().build();
+        }
+        personService.updatePerson(employeeId, updatedPerson);
+        return ResponseEntity.ok("Person updated successfully!");
+    }
+
+    @DeleteMapping("/{employeeId}")
+    public ResponseEntity<String> deletePerson(@PathVariable String employeeId) {
+        Person existingPerson = personService.getPersonByEmployeeId(employeeId);
+        if (existingPerson == null) {
+            return ResponseEntity.notFound().build();
+        }
+        personService.deletePerson(existingPerson.getId());
+        return ResponseEntity.ok("Person deleted successfully!");
+    }
+
+    @GetMapping("/department/{department}")
+    public ResponseEntity<List<Person>> getPersonsByDepartment(@PathVariable String department) {
+        List<Person> persons = personService.getPersonsByDepartment(department);
+        return ResponseEntity.ok(persons);
     }
 
     @PostMapping("/createPerson")
