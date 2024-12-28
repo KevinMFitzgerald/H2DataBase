@@ -13,26 +13,9 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Person person1 = new Person();
-        person1.setName("Kevin Mark Fitzgerald");
-        person1.setAge(30);
-        person1.setEmail("KMF@gmail.com");
-        person1.setTitle("Engineer");
-        person1.setEmployeeId("K123");
-        person1.setPosition("Software Engineer");
-        person1.setDepartment("IT");
-
-        Person person2 = new Person();
-        person2.setName("Mark Kevin Fitzgerald");
-        person2.setAge(28);
-        person2.setEmail("MKF@example.com");
-        person2.setTitle("Student");
-        person2.setEmployeeId("M456");
-        person2.setPosition("Software Engineer");
-        person2.setDepartment("IT");
-
-        personRepository.save(person1);
-        personRepository.save(person2);
-
+        Person temp1 = new Person( 1, "Kevin Mark Fitzgerald", 30, "KMF@gmail.com", "Engineer", "K123", "Software Engineer", "IT");
+        Person temp2 = new Person( 2,"Mark Kevin Fitzgerald", 28, "MKF@example.com", "Student", "M456", "Software Engineer", "IT");
+        personRepository.save(temp2);
+        personRepository.save(temp1);
     }
 }

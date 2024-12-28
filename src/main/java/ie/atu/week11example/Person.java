@@ -40,4 +40,8 @@ public class Person {
     @NotBlank
     private String department;
 
+
+    public Person(int i, String name, int age, String mail, String title, String employeeId, String position, String department) {
+
+    }
 }
