@@ -1,13 +1,13 @@
-package ie.atu.databases;
+package ie.atu.week11example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DatabasesApplication {
+public class Week11ExampleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DatabasesApplication.class, args);
+        SpringApplication.run(Week11ExampleApplication.class, args);
     }
 
 }
