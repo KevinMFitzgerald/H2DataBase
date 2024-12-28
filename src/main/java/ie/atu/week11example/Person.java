@@ -7,12 +7,14 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @Entity
+@AllArgsConstructor
 public class Person {
 
     @Id
@@ -39,9 +41,4 @@ public class Person {
 
     @NotBlank
     private String department;
-
-
-    public Person(int i, String name, int age, String mail, String title, String employeeId, String position, String department) {
-
-    }
 }
